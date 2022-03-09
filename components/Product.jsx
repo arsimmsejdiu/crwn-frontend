@@ -8,7 +8,7 @@ export default function Product({ product }) {
   // console.log(product.photo.image.publicUrlTransformed);
   return (
     <ItemStyles>
-      <img src={product?.photo?.image?.publicUrlTransformed} />
+      <img src={product?.photo?.image?.publicUrlTransformed} alt="hej"/>
       <Title>
         <Link href={`/product/${product?.id}`}>{product?.name}</Link>
       </Title>

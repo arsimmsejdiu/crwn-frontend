@@ -46,6 +46,17 @@ const Form = styled.form`
     font-size: 2rem;
     font-weight: 600;
     padding: 0.5rem 1.2rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      border-radius: 10px;
+      background-image: linear-gradient(
+        to right,
+        #ff3019 0%,
+        #e2b04a 50%,
+        #ff3019 100%
+      );
+    }
   }
   fieldset {
     border: 0;
