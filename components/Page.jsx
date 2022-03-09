@@ -10,6 +10,21 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
   }
 
+html{
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar{
+    width: 0.5rem;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #FF0000;
+    border-radius: 50px;
+}
+body::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
   html {
     --red: #FF0000;
     --black: #393939;
@@ -62,9 +77,7 @@ export default function Page({ children }) {
     <div>
       <GlobalStyles />
       <Header></Header>
-      <InnerStyles>
-        {children}
-      </InnerStyles>
+      <InnerStyles>{children}</InnerStyles>
     </div>
   );
 }
