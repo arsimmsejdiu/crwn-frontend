@@ -21,10 +21,11 @@ const ALL_PRODUCTS_QUERY = gql`
 `;
 
 const ProductsListStyles = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
-`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  margin-top: 30px;
+`;
 
 export default function Products() {
   const { data, error, loading } = useQuery(ALL_PRODUCTS_QUERY);
@@ -35,7 +36,7 @@ export default function Products() {
     <div>
       <ProductsListStyles>
         {data.allProducts.map((product) => (
-          <Product key={product.id} product={product}/>
+          <Product key={product.id} product={product} />
         ))}
       </ProductsListStyles>
     </div>
