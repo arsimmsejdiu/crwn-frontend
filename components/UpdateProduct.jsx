@@ -3,6 +3,8 @@ import gql from "graphql-tag";
 import useForm from "../lib/useForm";
 import DisplayError from "./ErrorMessage";
 import Form from "./styles/Form";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SINGLE_PRODUCT_QUERY = gql`
   query SINGLE_PRODUCT_QUERY($id: ID!) {
@@ -55,6 +57,17 @@ export default function UpdateProduct({ id }) {
   console.log(inputs);
   if (loading) return <p>loading...</p>;
   // 3. We need the form to handle the updates
+
+  const notify = () =>
+    toast.success("Successfuly Updated", {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   return (
     <Form
       onSubmit={async (e) => {
@@ -113,7 +126,20 @@ export default function UpdateProduct({ id }) {
           />
         </label>
 
-        <button type="submit">Update Product</button>
+        <button onClick={notify} type="submit">
+          Update Product
+        </button>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </fieldset>
     </Form>
   );
