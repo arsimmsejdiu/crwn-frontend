@@ -24,7 +24,7 @@ const SIGNIN_MUTATION = gql`
 `;
 
 export default function SignIn() {
-  const { inputs, handleChange, resetForm } = useForm({
+  const { inputs, handleChange, resetForms } = useForm({
     email: '',
     password: '',
   });
@@ -38,7 +38,7 @@ export default function SignIn() {
     console.log(inputs);
     const res = await signin();
     console.log(res);
-    resetForm();
+    resetForms();
     // Send the email and password to the graphqlAPI
   }
   const error =
