@@ -45,7 +45,7 @@ export default function SignUp() {
       <fieldset>
         {data?.createUser && (
           <p>
-            Signed up with {data.createUser.email} - Please Go Head and Sign in!
+            Signed up with {data.createUser.email} - Please go ahead and Sign in!
           </p>
         )}
         <label htmlFor="email">
