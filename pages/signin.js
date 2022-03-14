@@ -1,4 +1,5 @@
 import SignIn from "../components/SignIn";
+import SignUp from "../components/SignUp";
 import styled from "styled-components";
 
 const GridStyles = styled.div`
@@ -8,9 +9,10 @@ const GridStyles = styled.div`
 `;
 
 export default function Signin() {
-    return (
-        <GridStyles>
-            <SignIn />
-        </GridStyles>
-    )
+  return (
+    <GridStyles>
+      <SignIn />
+      <SignUp />
+    </GridStyles>
+  );
 }
